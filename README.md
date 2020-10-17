@@ -6,6 +6,7 @@
 
 - Ruby v2.7.1
 - Ruby on Rails v5.2.4
+- Postman
 
 ## Getting Started
 
