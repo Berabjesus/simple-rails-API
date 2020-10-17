@@ -1,13 +1,19 @@
-# README
+# A simple rails RESTapi for Articles
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This is a small and simple rails RESTapi that fetches article content from a postgres database. It is done for impelmentation purposes.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby v2.7.1
+- Ruby on Rails v5.2.4
 
-* System dependencies
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Setup and Configuration
+
+- Go to the root of the local folder of this project.
 
 * Configuration
 
