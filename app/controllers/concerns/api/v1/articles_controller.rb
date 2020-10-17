@@ -58,9 +58,8 @@ module Api
           status: 'FAILED',
           message: "FAILED TO DELETE ENTRY NUMBER #{params[:id]} because of #{e.message}",
           data: ''
-        }, status: :unprocessable_entity
-        nil
-      end
+        }, status: :not_found
+=      end
 
       private
 
