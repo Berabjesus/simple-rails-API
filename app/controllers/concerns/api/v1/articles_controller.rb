@@ -39,29 +39,27 @@ module Api
       end
 
       def destroy
-        begin
-          article = Article.find(params[:id])
-          if article.destroy
-            render json: {
-              status: 'Success',
-              message: "DELETED ENTRY NUMBER #{params[:id]}",
-              data: article
-            }, status: :ok
-          else
-            render json: {
-              status: 'FAILED',
-              message: "FAILED TO DELETE ENTRY NUMBER #{params[:id]}",
-              data: article
-            }, status: :unprocessable_entity
-          end
-        rescue => exception
+        article = Article.find(params[:id])
+        if article.destroy
+          render json: {
+            status: 'Success',
+            message: "DELETED ENTRY NUMBER #{params[:id]}",
+            data: article
+          }, status: :ok
+        else
           render json: {
             status: 'FAILED',
             message: "FAILED TO DELETE ENTRY NUMBER #{params[:id]}",
-            data: ""
+            data: article
           }, status: :unprocessable_entity
-          return
         end
+      rescue StandardError => e
+        render json: {
+          status: 'FAILED',
+          message: "FAILED TO DELETE ENTRY NUMBER #{params[:id]} because of #{e.message}",
+          data: ''
+        }, status: :unprocessable_entity
+        nil
       end
 
       private
